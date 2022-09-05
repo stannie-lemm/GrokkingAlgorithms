@@ -4,6 +4,9 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 from binary_search import binary_search as bs
 from selection_sort import selection_sort as sel_sort
+from divide_n_conquer import recursive_len as r_len
+from divide_n_conquer import recursive_largest as r_max
+
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
@@ -21,5 +24,12 @@ if __name__ == '__main__':
     # Selection Sort dem
     print(my_list[::-1])
     print(sel_sort(my_list[::-1]))
+
+    # D-n-C dem
+    print(r_len(my_list))
+    print(r_len([0]))
+
+    print(r_max([1]))
+    print(r_max(my_list))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
