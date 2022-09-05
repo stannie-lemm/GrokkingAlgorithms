@@ -26,6 +26,8 @@ def recursive_len(arr):
 # Ex 3: find the largest number in list
 
 def recursive_largest(arr):
+    if len(arr) == 0:
+        return None
     if len(arr) == 1:
         return arr[0]
     return max(arr[0], recursive_largest(arr[1:]))

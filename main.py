@@ -6,6 +6,7 @@ from binary_search import binary_search as bs
 from selection_sort import selection_sort as sel_sort
 from divide_n_conquer import recursive_len as r_len
 from divide_n_conquer import recursive_largest as r_max
+from quick_sort import quick_sort as q_s
 
 
 def print_hi(name):
@@ -31,5 +32,11 @@ if __name__ == '__main__':
 
     print(r_max([1]))
     print(r_max(my_list))
+
+    # Quick sort dem
+    print(q_s([1, 1, 1, 1, 1, 2, 1]))
+    print(q_s([1]))
+    print(q_s([]))
+    print(q_s([5, 4, 3, 2, 1]))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
