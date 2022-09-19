@@ -1,4 +1,5 @@
-# задача про покрытие множества
+import random
+# set covering solution
 states_needed = set(["mt", "wa", "or", "id", "nv", "ut", "ca", "az"])
 
 stations = dict()
@@ -24,4 +25,37 @@ while states_needed:
 print(final_stations)
 
 
-# задача про поиск кратчайшего пути
+# TSP solution
+cities_to_visit = set([3, 2])
+cities_visited = set()
+cities_map = dict()
+cities_map[1] = dict()
+cities_map[1][2] = 7
+cities_map[1][3] = 4
+cities_map[2] = dict()
+cities_map[2][3] = 8
+cities_map[2][1] = 7
+cities_map[3] = dict()
+cities_map[3][1] = 4
+cities_map[3][2] = 8
+
+# choose random city as starting point
+start_city = 1
+path_cost = 0
+
+while cities_to_visit:
+    best_city = 0
+    cities_map[start_city][best_city] = float("inf")
+    # choose city with the lowest cost to travel
+    for city in cities_to_visit:
+        if cities_map[start_city][city] < cities_map[start_city][best_city]:
+            best_city = city
+
+    # add it to visited
+    cities_visited.add(best_city)
+    path_cost += cities_map[start_city][best_city]
+    start_city = best_city
+    cities_to_visit -= cities_visited
+
+
+print(path_cost)
